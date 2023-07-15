@@ -1,37 +1,108 @@
 :root{
-  --nav-width:max(175px);
-  --aside-width:max(250px,25vw);
-  --main-width:max(250px,50vw);
+  --nav-width:max(75px,275px);
+  --aside-width:min(350px);
+  --main-width:auto;
 }
 body{
   margin: 0%;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height:100vh;
 }
 
-.page-containner{
+.main-aside{
+  width: 100%;
+  background-color: blue;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 350px;
+}
+main{
+  align-content: center;
+}
+.content{
+  width:80%;
+  margin: 35px;
+}
+aside{
+  background-color: aquamarine;
+ position: relative;
+}
+
+.page-container{
   background-color: lightgrey;
   margin:0%;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 175px auto 350px;
+  grid-template-columns:var(--nav-width) minmax(0, var(--main-width));
+  font: 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height: 24px;
+  color: rgb(230,232,233);
+
 }
 
-nav{
+.left-sidebar{
   margin: 0%;
   background-color: orange;
+  width: var(--nav-width);
+  height: 100%;
+
 }
 
-nav .left-sidebar-item-group{
+.left-sidebar-group{
   position: fixed;
+  width:var(--nav-width);
+  height :fit-content;
 }
 
-main{
-  background-color: blue;
+.left-sidebar-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color:  rgba(20,20,20,1.0);
+  padding: 0;
 }
 
-aside{
-  background-color: aquamarine;
-
+.left-sidebar-menu-items {
+  margin:1px 0px;
+  height: 50px;
+  width: 100%;
+  justify-content: left;
+  padding: 0;
+  background-color: rgba(20,20,20,1.0);
 }
+
+.left-sidebar-menu-button {
+  margin: 0 25px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  background-color: rgba(20,20,20,1.0);
+  width: 175px;
+  height: 50px;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  transition:linear 0.2s;
+}
+.left-sidebar-menu-button:hover{
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 9999px;
+}
+
+.left-sidebar-menu-button span {
+  box-sizing: border-box;
+  display: inline;
+  margin:0px 16px 0px 20px;
+}
+
+.left-sidebar-menu-button svg {
+  height: 26.25px;
+  width: 26.25px;
+  margin: 0 7.5px;
+}
+
+
+

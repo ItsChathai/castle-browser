@@ -1,9 +1,11 @@
-import Content from "./content";
+import Content from "./Content";
 
 
 export const MainContent = () =>{
-    return(
+    return(<div className="main-aside">
         <main><Content/></main>
+        <aside>aside</aside>
+        </div>
     )
 }
 
